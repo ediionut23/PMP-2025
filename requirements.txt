@@ -1,5 +1,0 @@
-pymc
-arviz
-matplotlib
-numpy
-jupyter
