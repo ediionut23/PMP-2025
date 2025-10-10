@@ -46,11 +46,27 @@ plt.title('Distribuția Poisson Randomizată (λ aleatoriu)')
 plt.xlabel('Număr de apeluri')
 plt.ylabel('Frecvență')
 plt.show()
-
-
 # b) distributia randomizata nu are neaparat un varf, tinde mai mult sa aiba un platou,
 # in functie de cate valori diferite de lambda sunt alese si cat de des apar acestea in selectie.
 #la valorile fixe de lambda, se observa un varf clar la valoarea medie a distributiei Poisson,
 # in timp ce la distributia randomizata, varful este mai putin evident si
 #deci in lumea reala, daca rata de aparitie a evenimentelor variaza semnificativ,
 # modelul cu lambda randomizat poate oferi o reprezentare mai realista a datelor
+# c) BONUS: Probabilități inegale
+X_weighted = []
+probabilities = [0.1, 0.2, 0.5, 0.2]
+
+for i in range(n_simulations):
+    chosen_lambda = np.random.choice(lambdas, p=probabilities)
+    value = np.random.poisson(lam=chosen_lambda)
+    X_weighted.append(value)
+
+X_weighted = np.array(X_weighted)
+
+plt.hist(X_weighted, bins=20, color='magenta', edgecolor='black', alpha=0.7)
+plt.title('c)λ=5 mai probabil (10%, 20%, 50%, 20%)')
+plt.xlabel('Număr de apeluri')
+plt.ylabel('Frecvență')
+plt.show()
+
+
