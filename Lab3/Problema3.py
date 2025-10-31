@@ -59,7 +59,6 @@ for s in [0, 1]:  # Pentru fiecare starter
 cpd_m = TabularCPD('M', 13, np.array(m_vals).T,
                    evidence=['Starter', 'N'], evidence_card=[2, 6])
 
-# Adăugarea CPD-urilor la model
 print(cpd_starter)
 print(cpd_n)
 print(cpd_m)
