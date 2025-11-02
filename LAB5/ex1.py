@@ -75,7 +75,7 @@ print(f"Secventa observata: {observed_grades}")
 
 log_probability = model.score(observed_sequence)
 probability = np.exp(log_probability)
-print(f"\nProbabilitatea secventei: {probability:.2e}")
+print(f"\nProbabilitatea secventei: {probability:.2e}") 
 
 # c
 # ============================================================================
